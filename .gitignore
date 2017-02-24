@@ -1,0 +1,8 @@
+# All text files
+*.txt
+
+# storage folder
+/storage/
+
+# d3 folder
+/d3/

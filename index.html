@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>D3 Page Template</title>
+        <script type="text/javascript" src="d3/d3.js"></script>
+        <script type="text/javascript" src="graph.js"></script>
+    </head>
+    <body>
+        <script type="text/javascript">
+
+            
+
+            // Data
+            var node_lst = [0, 1, 2, 3, 4, 5];
+
+            var layout = [[1.0, 0.0], 
+                          [0.5, 0.866],
+                          [-0.5, 0.866],
+                          [-1.0, 0],
+                          [-0.5, -0.866],
+                          [0.5, -0.866]];
+
+            var edges = [[2, 0],
+                         [4, 0],
+                         [5, 1],
+                         [4, 2],
+                         [0, 3],
+                         [1, 4],
+                         [0, 5],
+                         [3, 5]];
+
+            // Drawing vars:
+            var node_radius = 20;
+            var svg_w = 500;
+            var svg_h = 500;
+
+            var svg = d3.select("body")
+                .append("svg")
+                .attr("width", svg_w)
+                .attr("height", svg_h);
+
+            layout = layout.map(function(c) {return [c[0] * (svg_w/2 - 50) + svg_w/2, c[1] * (svg_h/2 - 50) + svg_h/2];})
+
+            draw_graph(svg, node_lst, edges, layout, node_radius);
+
+            
+            
+        </script>
+    </body>
+</html>
